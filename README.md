@@ -1,2 +1,2 @@
 # SuchDialogueBuilder
-A dialogue builder made with javascript.
+A dialogue builder made with typescript.
