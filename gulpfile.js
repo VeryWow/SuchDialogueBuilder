@@ -9,8 +9,11 @@ var vueify = require('vueify');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
 
-function compile(watch) {
-  var bundler = watchify(browserify('./src/app.js', { debug: true }).transform(babel).transform(vueify));
+function compile(watch, build) {
+  var bundler = browserify('./src/app.js', { debug: true }).transform(babel).transform(vueify);
+  if (watch && !build) {
+    bundler = watchify(bundler);
+  }
 
   function rebundle() {
     bundler.bundle()
@@ -22,7 +25,7 @@ function compile(watch) {
       .pipe(gulp.dest('./dist'));
   }
 
-  if (watch) {
+  if (watch && !build) {
     bundler.on('update', function() {
       console.log('-> Bundling...');
       rebundle();
@@ -31,11 +34,14 @@ function compile(watch) {
   }
 
   rebundle();
-  gulp.start(['webserver']);
+
+  if (!build) {
+    gulp.start(['webserver']);
+  }
 }
 
 function watch() {
-  return compile(true);
+  return compile(true, false);
 };
 
 gulp.task('webserver', function() {
@@ -49,7 +55,7 @@ gulp.task('webserver', function() {
     .pipe(open({uri: 'http://localhost:'+port}));
 });
 
-gulp.task('build', function() { return compile(); });
+gulp.task('build', function() { return compile(false, true); });
 gulp.task('watch', function() { return watch(); });
 
 gulp.task('default', ['watch']);
