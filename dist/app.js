@@ -10614,7 +10614,7 @@ new _vue2.default({
 
 },{"./app.vue":6,"vue":3}],6:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\nbody {\n  font : 100% Helvetica, sans-serif;\n  color: #ecf0f1;\n  text-align: center;\n  background-color: #34495e;\n}\n")
+var __vueify_style__ = __vueify_insert__.insert("/* line 2, stdin */\nbody {\n  font: 100% Helvetica, sans-serif;\n  text-align: center;\n  background-color: #34495e; }\n  /* line 6, stdin */\n  body.bad {\n    color: #ecf0f1; }\n")
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10623,25 +10623,25 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   data: function data() {
     return {
-      msg: 'Hello',
+      msg: 'Hello1',
       name: 'Very Wow!'
     };
   }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div>\n  <h1>{{ msg }}</h1>\n  <p>{{ name }}</p>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<div><h1>{{ msg }}</h1><p>{{ name }}</p></div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.dispose(function () {
-    __vueify_insert__.cache["\nbody {\n  font : 100% Helvetica, sans-serif;\n  color: #ecf0f1;\n  text-align: center;\n  background-color: #34495e;\n}\n"] = false
+    __vueify_insert__.cache["/* line 2, stdin */\nbody {\n  font: 100% Helvetica, sans-serif;\n  text-align: center;\n  background-color: #34495e; }\n  /* line 6, stdin */\n  body.bad {\n    color: #ecf0f1; }\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-70df1174", module.exports)
+    hotAPI.createRecord("_v-fff65708", module.exports)
   } else {
-    hotAPI.update("_v-70df1174", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-fff65708", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":3,"vue-hot-reload-api":2,"vueify/lib/insert-css":4}]},{},[5])
