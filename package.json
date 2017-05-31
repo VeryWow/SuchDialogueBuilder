@@ -2,7 +2,7 @@
   "name": "such-dialogue-builder",
   "version": "0.0.1",
   "private": true,
-  "description": "A dialogue builder made with typescript.",
+  "description": "A dialogue builder made with javascript.",
   "scripts": {
     "dev": "gulp serve",
     "build": "gulp compile",
