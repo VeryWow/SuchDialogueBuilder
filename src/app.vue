@@ -8,8 +8,8 @@
   export default {
     data () {
       return {
-        msg: 'Hello1',
-        name: 'Very Wow!'
+        msg: 'Hello, my friend!',
+        name: 'Very Wow! Such friend'
       }
     }
   }
