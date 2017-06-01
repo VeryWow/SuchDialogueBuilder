@@ -1,0 +1,8 @@
+/* line 19, stdin */
+body {
+  font: 100% Helvetica, sans-serif;
+  text-align: center;
+  background-color: #34495e; }
+  /* line 23, stdin */
+  body.bad {
+    color: #ecf0f1; }
