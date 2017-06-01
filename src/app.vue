@@ -24,4 +24,8 @@
       color: #ecf0f1;
     }
   }
+  h1 {
+    display: flex;
+    transition: all 200ms;
+  }
 </style>

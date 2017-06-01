@@ -9,5 +9,8 @@ body {
 
 /* line 27, stdin */
 h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: all 200ms;
   transition: all 200ms; }
