@@ -5,3 +5,8 @@
 # Node.
 node_modules
 npm-debug.log
+
+# dist generated junk
+dist/*.js
+dist/prefixed
+dist/*.css
