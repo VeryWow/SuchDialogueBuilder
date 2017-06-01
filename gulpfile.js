@@ -6,11 +6,12 @@ const gulp = require('gulp'),
     watchify = require('watchify'),
     babel = require('babelify'),
     vueify = require('vueify'),
+    uglify = require('gulp-uglify'),
     dogefy = require('dogefy'),
     connect = require('gulp-connect'),
     open = require('gulp-open'),
     util = require('gulp-util'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = () => require('gulp-autoprefixer')(require('./autoprefixer.config'));
 
 function compile(watch, build) {
   var bundler = browserify('./src/app.js', { debug: true })
@@ -42,12 +43,6 @@ function compile(watch, build) {
   }
 
   rebundle();
-  // gulp.src('./dist/*.css')
-  //   .pipe(autoprefixer({
-  // //       // browsers: ['last 2 versions'],
-  // //       // cascade: false
-  //   }))
-  //   .pipe(gulp.dest('./dist'));
 
   if (!build) {
     gulp.start(['webserver']);
@@ -71,15 +66,14 @@ gulp.task('webserver', function() {
 
 gulp.task('watch', () => watch());
 gulp.task('build', () => {
-    var res = compile(false, true);
+    compile(false, true);
 
+    //autoprefix distributed css
     gulp.src('./dist/*.css')
-      .pipe(autoprefixer(require('./autoprefixer.config')))
-      .pipe(gulp.dest('./dist'));
+      .pipe(autoprefixer())
+      .pipe(gulp.dest('./dist/prefixed'));
 
     util.log('Very wow!\n' + dogefy('dialogue builder applicaion'));
-
-    return res;
   }
 );
 
