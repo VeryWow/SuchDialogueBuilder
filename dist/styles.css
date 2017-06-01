@@ -6,3 +6,8 @@ body {
   /* line 23, stdin */
   body.bad {
     color: #ecf0f1; }
+
+/* line 27, stdin */
+h1 {
+  display: flex;
+  transition: all 200ms; }
