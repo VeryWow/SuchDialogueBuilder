@@ -1,31 +1,23 @@
 <template lang="pug">
-  div
+  div.app
     h1 {{ msg }}
-    p {{ name }}
+    p.ddd {{ name }}
+    test-component
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        msg: 'Hello, my friend!',
-        name: 'Very Wow! Such friend'
-      }
-    }
-  }
-</script>
+// inner components testing
+import TestComponent from './components/TestComponent.vue'
 
-<style lang="scss">
-  body {
-    font : 100% Helvetica, sans-serif;
-    text-align: center;
-    background-color: #34495e;
-    &.bad {
-      color: #ecf0f1;
+export default {
+  components: {
+    TestComponent
+  },
+  data () {
+    return {
+      msg: 'Hello, my friend!',
+      name: 'Very Wow! Such friend'
     }
   }
-  h1 {
-    display: flex;
-    transition: all 200ms;
-  }
-</style>
+}
+</script>
