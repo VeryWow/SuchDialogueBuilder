@@ -1,0 +1,19 @@
+//----------------------------------*\
+// CONFIG MODULES
+//----------------------------------*/
+
+@import "modules/vars";
+@import "modules/helpers";
+
+//----------------------------------*\
+// BASE TEMPLATE
+//----------------------------------*/
+
+@import "base";
+
+//----------------------------------*\
+// COMPONENTS
+//----------------------------------*/
+
+@import "components/app-component";
+@import "components/test-component";
