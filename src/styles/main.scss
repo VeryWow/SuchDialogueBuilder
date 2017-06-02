@@ -2,8 +2,7 @@
 // CONFIG MODULES
 //----------------------------------*/
 
-@import "modules/vars";
-@import "modules/helpers";
+@import "modules/*";
 
 //----------------------------------*\
 // BASE TEMPLATE
@@ -15,5 +14,4 @@
 // COMPONENTS
 //----------------------------------*/
 
-@import "components/app-component";
-@import "components/test-component";
+@import "components/*";
