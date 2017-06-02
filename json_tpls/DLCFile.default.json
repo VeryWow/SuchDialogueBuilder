@@ -1,0 +1,69 @@
+{
+  "Name": "Project name",
+  "Description": "Project description",
+  "Author": "Project author",
+  "Dialogues": [
+    {
+      "Name" : "dialogue_with_neighbour",
+      "NextDialogue" : "dialogue_with_neighbour_2",
+      "StartingLines" : ["UNIQUE_ID1", "UNIQUE_ID3"],
+      "Lines" : [
+        {
+          "uid": "UNIQUE_ID1",
+          "ShortText" : "Hey",
+          "Text" : "Hello there!",
+          "OwnerID" : "player",
+          "ImportanceLevel" : 0,
+          "Preconditions" : [
+            "player.waterAmount > 0"
+          ],
+          "NextLines" : ["UNIQUE_ID2"]
+        },
+        {
+          "uid": "UNIQUE_ID2",
+          "ShortText" : "Hello",
+          "Text" : "Hello mate! Can I take your water?",
+          "OwnerID" : "neighbour1",
+          "ImportanceLevel" : 0,
+          "Preconditions" : [
+            "player.waterAmount > 0"
+          ],
+          "NextLines" : ["UNIQUE_ID4"]
+        },
+        {
+          "uid": "UNIQUE_ID3",
+          "ShortText" : "Never mind",
+          "Text" : "You can't help me :(",
+          "OwnerID" : "neighbour1",
+          "ImportanceLevel" : 0,
+          "Preconditions" : [],
+          "NextLines" : ["dialogue_with_neighbour_2.UNIQUE_ID1"]
+        },
+        {
+          "uid": "UNIQUE_ID4",
+          "ShortText" : "Thx",
+          "Text" : "Thank you :)",
+          "OwnerID" : "neighbour1",
+          "ImportanceLevel" : 0,
+          "Preconditions" : [],
+          "NextLines" : []
+        }
+      ]
+    },
+    {
+      "Name" : "dialogue_with_neighbour_2",
+      "StartingLines" : ["UNIQUE_ID1"],
+      "Lines" : [
+        {
+          "uid": "UNIQUE_ID1",
+          "ShortText" : "Hey",
+          "Text" : "Hello there!",
+          "OwnerID" : "neighbour2",
+          "ImportanceLevel" : 0,
+          "Preconditions" : [],
+          "NextLines" : []
+        }
+      ]
+    }
+  ]
+}
