@@ -10,9 +10,10 @@ import dogefy from 'dogefy'
 import connect from 'gulp-connect'
 import open from 'gulp-open'
 import util from 'gulp-util'
-import scss from 'gulp-scss'
+import sass from 'gulp-sass'
 import rename from 'gulp-rename'
 import cleanCSS from 'gulp-clean-css'
+import bulkSass from 'gulp-sass-bulk-import'
 import autoprefixer_module from 'gulp-autoprefixer'
 
 const autoprefixer = () => autoprefixer_module(require('./autoprefixer.config'))
@@ -79,7 +80,8 @@ const scss_task = () => {
   util.log('Rebuilding css...')
 
   var result = gulp.src(paths.styles.src)
-    .pipe(scss())
+    .pipe(bulkSass())
+    .pipe(sass({ includePaths: ['src/styles'] }))
     .pipe(autoprefixer())
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .on('error', (err) => { util.log(err); this.emit('end'); })
@@ -93,7 +95,7 @@ const scss_task = () => {
   return result
 }
 
-const watch_sass_task = () => {
+const watch_scss_task = () => {
   return gulp.watch(paths.styles.watch_path, gulp.series(scss_task))
 }
 
@@ -108,8 +110,12 @@ const webserver_task = () => {
     .pipe(open({uri: 'http://localhost:'+port}))
 }
 
-const build = gulp.series(scss_task, browserify_task)
-const dev = gulp.series(scss_task, watchify_task, gulp.parallel(webserver_task, watch_sass_task))
+const end_build_task = () => {
+  util.log('Very wow!\n' + dogefy('dialogue builder applicaion'))
+}
+
+const build = gulp.series(scss_task, browserify_task, end_build_task)
+const dev = gulp.series(scss_task, watchify_task, gulp.parallel(webserver_task, watch_scss_task))
 
 export { build }
 export default dev
