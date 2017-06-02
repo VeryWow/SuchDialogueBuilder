@@ -9,8 +9,3 @@ npm-debug.log
 # cache
 .sass-cache
 .gulp-scss-cache
-
-# dist generated junk
-dist/*.js
-dist/prefixed
-dist/*.css
