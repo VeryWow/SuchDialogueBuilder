@@ -11,18 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/VeryWow/SuchDialogueBuilder.git"
   },
-  "browserify": {
-    "transform": [
-      "autoprefixer-stream"
-    ]
-  },
   "dependencies": {
     "bootstrap": "^3.3.6",
     "vue": "^2.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "autoprefixer-stream": "0.0.2",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-latest": "^6.24.1",

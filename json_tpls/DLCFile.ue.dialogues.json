@@ -1,0 +1,252 @@
+[
+	{
+		"Name" : "dialogue_with_neighbour",
+		"OwnerID" : "neighbour1",
+		"ImportanceLevel" : 1,
+		"Preconditions" : [],
+		"StartingLines" : [0],
+		"Next" : [1],
+		"Lines" : [
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "",
+				"ImportanceLevel" : 1,
+				"Text" : "Hello there!",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line001.line001'",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [1]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "Hi!",
+				"ImportanceLevel" : 1,
+				"Text" : "Hi, mate!",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line002.line002'",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [2]
+			},
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "",
+				"ImportanceLevel" : 1,
+				"Text" : "Could you lend me some water?",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line003.line003'",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [3, 4]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "Yeah, sure.",
+				"ImportanceLevel" : 1,
+				"Text" : "Yeah, sure.",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line004_1.line004_1'",
+				"Preconditions" : [
+					"player.waterAmount > 0"
+				],
+				"CallbackDescription" : "Player gives some water to the neighbour.",
+				"Next" : []
+			},
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "No, screw you!",
+				"ImportanceLevel" : 2,
+				"Text" : "Screw ya, mate! I need it myself!",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line004_2.line004_2'",
+				"Preconditions" : [],
+				"CallbackDescription" : "Neighbour is now more angry on player.",
+				"Next" : []
+			}
+		]
+	},
+	{
+		"Name" : "dialogue_with_neighbour_2",
+		"OwnerID" : "neighbour1",
+		"ImportanceLevel" : 2,
+		"Preconditions" : [],
+		"Next" : [],
+		"StartingLines" : [0, 5],
+		"Lines" : [
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "",
+				"ImportanceLevel" : 1,
+				"Text" : "Hello there!",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line001.line001'",
+				"Preconditions" : [
+					"npc.isAlly == true"
+				],
+				"CallbackDescription" : "",
+				"Next" : [1]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "Hi!",
+				"ImportanceLevel" : 1,
+				"Text" : "Hi, mate!",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line002.line002'",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [2]
+			},
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "",
+				"ImportanceLevel" : 1,
+				"Text" : "Could you lend me some water?",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line003.line003'",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [3, 4]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "Yeah, sure.",
+				"ImportanceLevel" : 1,
+				"Text" : "Yeah, sure.",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line004_1.line004_1'",
+				"Preconditions" : [
+					"player.waterAmount > 0"
+				],
+				"CallbackDescription" : "Player gives some water to the neighbour.",
+				"Next" : []
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "No, screw you!",
+				"ImportanceLevel" : 2,
+				"Text" : "Screw ya, mate! I need it myself!",
+				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line004_2.line004_2'",
+				"Preconditions" : [],
+				"CallbackDescription" : "Neighbour is now more angry on player.",
+				"Next" : []
+			},
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "",
+				"ImportanceLevel" : 2,
+				"Text" : "Here you are, twat!",
+				"SFX" : "",
+				"Preconditions" : [
+					"npc.isAlly == false"
+				],
+				"CallbackDescription" : "",
+				"Next" : [6, 7]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "",
+				"ImportanceLevel" : 2,
+				"Text" : "Hey, what's wrong with you?",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [8]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "",
+				"ImportanceLevel" : 3,
+				"Text" : "Oh, you come for MY water again? I'm gonna kick your entire ***!",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "Neighbour is now more angry on player, fight starts",
+				"Next" : []
+			},
+			{
+				"OwnerID" : "neighbour1",
+				"ShortText" : "",
+				"ImportanceLevel" : 3,
+				"Text" : "What's wrong?! Now YOU ask me what's wrong? Oh, I'll remind you: YOU pissed me off, so now I'm gonna kick your ***, ******!!!",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [9, 10]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "Ok, I'll give you water.",
+				"ImportanceLevel" : 2,
+				"Text" : "Oh, I'm sorry for the last time... Please, take these 2 bottles of water and my apologies...",
+				"SFX" : "",
+				"Preconditions" : [
+					"player.waterAmount >= 2"
+				],
+				"CallbackDescription" : "Neighbour is now more positive on player.",
+				"Next" : []
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "",
+				"ImportanceLevel" : 3,
+				"Text" : "Just try to!..",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "Neighbour is now more angry on player, fight starts.",
+				"Next" : []
+			}
+		]
+	},
+	{
+		"Name" : "dialogue_with_stranger",
+		"OwnerID" : "stranger",
+		"ImportanceLevel" : 0,
+		"Preconditions" : [],
+		"Next" : [2],
+		"StartingLines" : [0],
+		"Lines" : [
+			{
+				"OwnerID" : "stranger",
+				"ShortText" : "",
+				"ImportanceLevel" : 0,
+				"Text" : "Hello! Wife, say 'hello' to this nice man!",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [1]
+			},
+			{
+				"OwnerID" : "strangers_wife",
+				"ShortText" : "",
+				"ImportanceLevel" : 0,
+				"Text" : "Hello, mister!",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [2]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "",
+				"ImportanceLevel" : 0,
+				"Text" : "Hi, I'm fine. And you?",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [3]
+			},
+			{
+				"OwnerID" : "stranger",
+				"ShortText" : "",
+				"ImportanceLevel" : 0,
+				"Text" : "We are pretty fine too. Good luck!",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : [4]
+			},
+			{
+				"OwnerID" : "player",
+				"ShortText" : "",
+				"ImportanceLevel" : 0,
+				"Text" : "Bye!",
+				"SFX" : "",
+				"Preconditions" : [],
+				"CallbackDescription" : "",
+				"Next" : []
+			}
+		]
+	}
+]

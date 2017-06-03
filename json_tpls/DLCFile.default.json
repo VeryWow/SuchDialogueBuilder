@@ -2,6 +2,21 @@
   "Name": "Project name",
   "Description": "Project description",
   "Author": "Project author",
+  // A list of exported Characters
+  "Characters": [
+    {
+      "Name" : "MC Raider",
+      "ID" : "mc_raider", // To be used in OwnerID in dialogues
+      "Parameters" : {
+        "Custom object" : "Can literally write anything here.",
+        "Like" : ", for example,",
+        "HP" : 100,
+        "IsAlly" : false,
+        "Dialogue" : "dialogue_with_mc_raider" // Do we even need this?
+      }
+    }
+  ],
+  // A list of exported dialogues
   "Dialogues": [
     {
       "Name" : "dialogue_with_neighbour",
@@ -13,6 +28,7 @@
           "ShortText" : "Hey",
           "Text" : "Hello there!",
           "OwnerID" : "player",
+          "SFX" : "./line001.wav", //Relative path to a sfx line
           "ImportanceLevel" : 0,
           "Preconditions" : [
             "player.waterAmount > 0"
@@ -24,6 +40,7 @@
           "ShortText" : "Hello",
           "Text" : "Hello mate! Can I take your water?",
           "OwnerID" : "neighbour1",
+          "SFX" : "./line001.wav", //Relative path to a sfx line
           "ImportanceLevel" : 0,
           "Preconditions" : [
             "player.waterAmount > 0"
@@ -35,6 +52,7 @@
           "ShortText" : "Never mind",
           "Text" : "You can't help me :(",
           "OwnerID" : "neighbour1",
+          "SFX" : "./line001.wav", //Relative path to a sfx line
           "ImportanceLevel" : 0,
           "Preconditions" : [],
           "NextLines" : ["dialogue_with_neighbour_2.UNIQUE_ID1"]
@@ -44,6 +62,7 @@
           "ShortText" : "Thx",
           "Text" : "Thank you :)",
           "OwnerID" : "neighbour1",
+          "SFX" : "./line001.wav", //Relative path to a sfx line
           "ImportanceLevel" : 0,
           "Preconditions" : [],
           "NextLines" : []
@@ -59,6 +78,7 @@
           "ShortText" : "Hey",
           "Text" : "Hello there!",
           "OwnerID" : "neighbour2",
+          "SFX" : "./line001.wav", //Relative path to a sfx line
           "ImportanceLevel" : 0,
           "Preconditions" : [],
           "NextLines" : []
