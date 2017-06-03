@@ -4,10 +4,11 @@
 		"OwnerID" : "neighbour1",
 		"ImportanceLevel" : 1,
 		"Preconditions" : [],
-		"StartingLines" : [0],
-		"Next" : [1],
+		"StartingLines" : ["line001"],
+		"Next" : ["dialogue_with_neighbour_2"],
 		"Lines" : [
 			{
+				"ID" : "line001",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "",
 				"ImportanceLevel" : 1,
@@ -15,9 +16,10 @@
 				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line001.line001'",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [1]
+				"Next" : ["line002"]
 			},
 			{
+				"ID" : "line002",
 				"OwnerID" : "player",
 				"ShortText" : "Hi!",
 				"ImportanceLevel" : 1,
@@ -25,9 +27,10 @@
 				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line002.line002'",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [2]
+				"Next" : ["line003"]
 			},
 			{
+				"ID" : "line003",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "",
 				"ImportanceLevel" : 1,
@@ -35,9 +38,10 @@
 				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line003.line003'",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [3, 4]
+				"Next" : ["line004", "line005"]
 			},
 			{
+				"ID" : "line004",
 				"OwnerID" : "player",
 				"ShortText" : "Yeah, sure.",
 				"ImportanceLevel" : 1,
@@ -50,6 +54,7 @@
 				"Next" : []
 			},
 			{
+				"ID" : "line005",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "No, screw you!",
 				"ImportanceLevel" : 2,
@@ -67,9 +72,10 @@
 		"ImportanceLevel" : 2,
 		"Preconditions" : [],
 		"Next" : [],
-		"StartingLines" : [0, 5],
+		"StartingLines" : ["line001", "line006"],
 		"Lines" : [
 			{
+				"ID" : "line001",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "",
 				"ImportanceLevel" : 1,
@@ -79,9 +85,10 @@
 					"npc.isAlly == true"
 				],
 				"CallbackDescription" : "",
-				"Next" : [1]
+				"Next" : ["line002"]
 			},
 			{
+				"ID" : "line002",
 				"OwnerID" : "player",
 				"ShortText" : "Hi!",
 				"ImportanceLevel" : 1,
@@ -89,9 +96,10 @@
 				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line002.line002'",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [2]
+				"Next" : ["line003"]
 			},
 			{
+				"ID" : "line003",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "",
 				"ImportanceLevel" : 1,
@@ -99,9 +107,10 @@
 				"SFX" : "SoundWave'/Game/DS/DialogueSounds/line003.line003'",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [3, 4]
+				"Next" : ["line004", "line005"]
 			},
 			{
+				"ID" : "line004",
 				"OwnerID" : "player",
 				"ShortText" : "Yeah, sure.",
 				"ImportanceLevel" : 1,
@@ -114,6 +123,7 @@
 				"Next" : []
 			},
 			{
+				"ID" : "line005",
 				"OwnerID" : "player",
 				"ShortText" : "No, screw you!",
 				"ImportanceLevel" : 2,
@@ -124,6 +134,7 @@
 				"Next" : []
 			},
 			{
+				"ID" : "line006",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "",
 				"ImportanceLevel" : 2,
@@ -133,9 +144,10 @@
 					"npc.isAlly == false"
 				],
 				"CallbackDescription" : "",
-				"Next" : [6, 7]
+				"Next" : ["line007", "line008"]
 			},
 			{
+				"ID" : "line007",
 				"OwnerID" : "player",
 				"ShortText" : "",
 				"ImportanceLevel" : 2,
@@ -143,9 +155,10 @@
 				"SFX" : "",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [8]
+				"Next" : ["line009"]
 			},
 			{
+				"ID" : "line008",
 				"OwnerID" : "player",
 				"ShortText" : "",
 				"ImportanceLevel" : 3,
@@ -156,6 +169,7 @@
 				"Next" : []
 			},
 			{
+				"ID" : "line009",
 				"OwnerID" : "neighbour1",
 				"ShortText" : "",
 				"ImportanceLevel" : 3,
@@ -163,9 +177,10 @@
 				"SFX" : "",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [9, 10]
+				"Next" : ["line010", "line011"]
 			},
 			{
+				"ID" : "line010",
 				"OwnerID" : "player",
 				"ShortText" : "Ok, I'll give you water.",
 				"ImportanceLevel" : 2,
@@ -178,6 +193,7 @@
 				"Next" : []
 			},
 			{
+				"ID" : "line011",
 				"OwnerID" : "player",
 				"ShortText" : "",
 				"ImportanceLevel" : 3,
@@ -194,10 +210,11 @@
 		"OwnerID" : "stranger",
 		"ImportanceLevel" : 0,
 		"Preconditions" : [],
-		"Next" : [2],
-		"StartingLines" : [0],
+		"Next" : ["dialogue_with_stranger"],
+		"StartingLines" : ["line001"],
 		"Lines" : [
 			{
+				"ID" : "line001",
 				"OwnerID" : "stranger",
 				"ShortText" : "",
 				"ImportanceLevel" : 0,
@@ -205,9 +222,10 @@
 				"SFX" : "",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [1]
+				"Next" : ["line002"]
 			},
 			{
+				"ID" : "line002",
 				"OwnerID" : "strangers_wife",
 				"ShortText" : "",
 				"ImportanceLevel" : 0,
@@ -215,9 +233,10 @@
 				"SFX" : "",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [2]
+				"Next" : ["line003"]
 			},
 			{
+				"ID" : "line003",
 				"OwnerID" : "player",
 				"ShortText" : "",
 				"ImportanceLevel" : 0,
@@ -225,9 +244,10 @@
 				"SFX" : "",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [3]
+				"Next" : ["line004"]
 			},
 			{
+				"ID" : "line004",
 				"OwnerID" : "stranger",
 				"ShortText" : "",
 				"ImportanceLevel" : 0,
@@ -235,9 +255,10 @@
 				"SFX" : "",
 				"Preconditions" : [],
 				"CallbackDescription" : "",
-				"Next" : [4]
+				"Next" : ["line005"]
 			},
 			{
+				"ID" : "line005",
 				"OwnerID" : "player",
 				"ShortText" : "",
 				"ImportanceLevel" : 0,
