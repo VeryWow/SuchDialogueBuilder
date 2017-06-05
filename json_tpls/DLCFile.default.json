@@ -6,14 +6,7 @@
   "Characters": [
     {
       "Name" : "MC Raider",
-      "ID" : "mc_raider", // To be used in OwnerID in dialogues
-      "Parameters" : {
-        "Custom object" : "Can literally write anything here.",
-        "Like" : ", for example,",
-        "HP" : 100,
-        "IsAlly" : false,
-        "Dialogue" : "dialogue_with_mc_raider" // Do we even need this?
-      }
+      "ID" : "mc_raider" // To be used in OwnerID in dialogues
     }
   ],
   // A list of exported dialogues

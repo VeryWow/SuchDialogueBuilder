@@ -51,7 +51,7 @@ gulp.task('browserify_task', () => {
     .pipe(gulp.dest(paths.scripts.dest))
 
   util.log('Building complete')
-  util.log('Very wow!\n' + dogefy('dialogue builder applicaion'))
+  util.log('Very wow!\n' + dogefy('dialogue builder applicaion build successful'))
 
   return result
 })
