@@ -97,7 +97,7 @@ gulp.task('scss_task', () => {
 })
 
 gulp.task('watch_scss_task', () => {
-  return gulp.watch(paths.styles.watch_path, gulp.series(scss_task))
+  return gulp.watch(paths.styles.watch_path, gulp.series('scss_task'))
 })
 
 gulp.task('webserver_task', () => {
