@@ -1,20 +1,20 @@
-import gulp from 'gulp'
-import source from 'vinyl-source-stream'
-import buffer from 'vinyl-buffer'
-import browserify from 'browserify'
-import watchify from 'watchify'
-import babel from 'babelify'
-import vueify from 'vueify'
-import uglify from 'gulp-uglify'
-import dogefy from 'dogefy'
-import connect from 'gulp-connect'
-import open from 'gulp-open'
-import util from 'gulp-util'
-import sass from 'gulp-sass'
-import rename from 'gulp-rename'
-import cleanCSS from 'gulp-clean-css'
-import bulkSass from 'gulp-sass-bulk-import'
-import autoprefixer_module from 'gulp-autoprefixer'
+import gulp                 from 'gulp'
+import source               from 'vinyl-source-stream'
+import buffer               from 'vinyl-buffer'
+import browserify           from 'browserify'
+import watchify             from 'watchify'
+import babel                from 'babelify'
+import vueify               from 'vueify'
+import uglify               from 'gulp-uglify'
+import dogefy               from 'dogefy'
+import connect              from 'gulp-connect'
+import open                 from 'gulp-open'
+import util                 from 'gulp-util'
+import sass                 from 'gulp-sass'
+import rename               from 'gulp-rename'
+import cleanCSS             from 'gulp-clean-css'
+import bulkSass             from 'gulp-sass-bulk-import'
+import autoprefixer_module  from 'gulp-autoprefixer'
 
 const autoprefixer = () => autoprefixer_module(require('./autoprefixer.config'))
 
@@ -35,7 +35,7 @@ const paths = {
   }
 }
 
-const browserify_task = () => {
+gulp.task('browserify_task', () => {
   util.log('Building...')
 
   var bundler = browserify(paths.scripts.src, { debug: true })
@@ -51,11 +51,12 @@ const browserify_task = () => {
     .pipe(gulp.dest(paths.scripts.dest))
 
   util.log('Building complete')
+  util.log('Very wow!\n' + dogefy('dialogue builder applicaion'))
 
   return result
-}
+})
 
-const watchify_task = () => {
+gulp.task('watchify_task', () => {
   var bundler = watchify(browserify(paths.scripts.src, { debug: true }))
 
   bundler.transform(babel)
@@ -74,9 +75,9 @@ const watchify_task = () => {
   }
 
   return rebundle()
-}
+})
 
-const scss_task = () => {
+gulp.task('scss_task', () => {
   util.log('Rebuilding css...')
 
   var result = gulp.src(paths.styles.src)
@@ -93,13 +94,13 @@ const scss_task = () => {
   util.log('Rebuilding css complete')
 
   return result
-}
+})
 
-const watch_scss_task = () => {
+gulp.task('watch_scss_task', () => {
   return gulp.watch(paths.styles.watch_path, gulp.series(scss_task))
-}
+})
 
-const webserver_task = () => {
+gulp.task('webserver_task', () => {
   var port = 8000
   connect.server({
     root: paths.dist.path,
@@ -108,14 +109,10 @@ const webserver_task = () => {
   })
   gulp.src(__filename)
     .pipe(open({uri: 'http://localhost:'+port}))
-}
+})
 
-const end_build_task = () => {
-  util.log('Very wow!\n' + dogefy('dialogue builder applicaion'))
-}
-
-const build = gulp.series(scss_task, browserify_task, end_build_task)
-const dev = gulp.series(scss_task, watchify_task, gulp.parallel(webserver_task, watch_scss_task))
+const build = gulp.series('scss_task', 'browserify_task')
+const dev = gulp.series('scss_task', 'watchify_task', gulp.parallel('webserver_task', 'watch_scss_task'))
 
 export { build }
 export default dev
